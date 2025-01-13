@@ -13,10 +13,12 @@
  * @returns {Array} 새로운 todos 배열
  */
 function updateTodoTitle(todos, id, newTitle) {
-    todos = todos.map((t) => {
-        t.id === id ? {...t, title: newTitle} : t
+    return todos.map(t => {
+        if (t.id === id) {
+            return { ...t, title: newTitle };
+        }
+        return t;
     })
-    return todos;
 }
 
 // export 수정 불가

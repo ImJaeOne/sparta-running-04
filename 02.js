@@ -13,8 +13,12 @@
  * @returns {Array} 새로운 todos 배열
  */
 function createTodo(todos, title) {
-    todos = todos.map((t, i) => ({ ...t, id: i, title: title, completed: false }));
-    return todos;
+    let newTodo = {
+        id: Date.now(),
+        title: title,
+        completed: false
+    };
+    return [...todos, newTodo]
 }
 
 // export 수정 불가

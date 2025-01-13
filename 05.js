@@ -14,7 +14,7 @@
  */
 
 function filterUserTodos(userTodos, userId, priority) {
-    return userTodos.map((t) => t.userId === userId && t.priority === priority).filter((t) => t.completed === false).map((t) => t.tile);
+    return userTodos.filter((t) => t.userId === userId && t.priority === priority).filter((t) => t.completed === false).map((t) => t.title);
 }
 
 // export 수정 불가

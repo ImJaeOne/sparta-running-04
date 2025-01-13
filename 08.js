@@ -13,8 +13,8 @@
  */
 async function extractNames(url) {
     const res = await fetch(url);
-    const results = await res.json();
-    return results.records.map((r) => r.detail)
+    const data = await res.json();
+    return data.result.records.map((r) => String(r.detail.name))
 }
 
 // export 수정 불가
